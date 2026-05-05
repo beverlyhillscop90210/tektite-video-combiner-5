@@ -683,7 +683,7 @@ class TektiteVideoCombiner5:
                 "+genpts",
                 "-i",
                 concat_list_path,
-                "-vsync",
+                "-fps_mode",
                 "cfr",
                 "-r",
                 str(float(target_fps)),
@@ -697,8 +697,6 @@ class TektiteVideoCombiner5:
                 str(crf),
                 "-pix_fmt",
                 "yuv420p",
-                "-movflags",
-                "+faststart",
                 resolved_output,
             ]
             reencode_cmd = [str(x) for x in reencode_cmd]
@@ -761,8 +759,6 @@ class TektiteVideoCombiner5:
             str(gop),
             "-sc_threshold",
             "0",
-            "-movflags",
-            "+faststart",
             out_path,
         ]
         cmd = [str(x) for x in cmd]
